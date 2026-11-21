@@ -1,0 +1,10 @@
+info: Opiniones.Worker.Application.ExtractionWorker[0]
+      Inicio del lote fa869ceb71c246a891d32ae96c4a06d5
+info: Opiniones.Worker.Infrastructure.StagingWriter[0]
+      Fuente encuestas-csv del lote fa869ceb71c246a891d32ae96c4a06d5: 2 registros leídos en 59 ms
+info: Opiniones.Worker.Infrastructure.StagingWriter[0]
+      Fuente resenas-bd del lote fa869ceb71c246a891d32ae96c4a06d5: 3 registros leídos en 28 ms
+fail: Opiniones.Worker.Infrastructure.StagingWriter[0]
+      Error en comentarios-api, lote fa869ceb71c246a891d32ae96c4a06d5, tras 0 registros (HttpRequestException, código 404)
+fail: Opiniones.Worker.Application.ExtractionWorker[0]
+      Lote fa869ceb71c246a891d32ae96c4a06d5 fallido (HttpRequestException)

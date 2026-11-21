@@ -1,0 +1,4 @@
+encuestas-csv: 2 registros; IDs y metadatos verificados
+resenas-bd: 3 registros; IDs y metadatos verificados
+comentarios-api: 3 registros; IDs y metadatos verificados
+La prueba negativa devolvió 1 y conservó únicamente el lote confirmado.

@@ -1,0 +1,10 @@
+info: Opiniones.Worker.Application.ExtractionWorker[0]
+      Inicio del lote 9360bf5f67084ab8b8decd17a2e8a17e
+info: Opiniones.Worker.Infrastructure.StagingWriter[0]
+      Fuente encuestas-csv del lote 9360bf5f67084ab8b8decd17a2e8a17e: 2 registros leídos en 59 ms
+info: Opiniones.Worker.Infrastructure.StagingWriter[0]
+      Fuente resenas-bd del lote 9360bf5f67084ab8b8decd17a2e8a17e: 3 registros leídos en 28 ms
+info: Opiniones.Worker.Infrastructure.StagingWriter[0]
+      Fuente comentarios-api del lote 9360bf5f67084ab8b8decd17a2e8a17e: 3 registros leídos en 40 ms
+info: Opiniones.Worker.Application.ExtractionWorker[0]
+      Lote 9360bf5f67084ab8b8decd17a2e8a17e confirmado: 8 registros en 140 ms

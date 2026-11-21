@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="26.0.0">
+  <diagram id="etl-1" name="Arquitectura">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageWidth="600" pageHeight="440">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e1" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.167;entryY=0.000;" edge="1" parent="1" source="csv" target="worker">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="121.5" y="135" />
+              <mxPoint x="203" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.510;entryY=0.000;" edge="1" parent="1" source="db" target="worker">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.833;entryY=0.000;" edge="1" parent="1" source="api" target="worker">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="461.5" y="135" />
+              <mxPoint x="375" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=1.000;exitY=0.500;entryX=0.000;entryY=0.500;" edge="1" parent="1" source="worker" target="log">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.500;entryY=0.000;" edge="1" parent="1" source="worker" target="stage">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.500;entryY=0.000;dashed=1;" edge="1" parent="1" source="stage" target="transform">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="289" y="321" />
+              <mxPoint x="121" y="321" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=1.000;exitY=0.500;entryX=0.000;entryY=0.500;dashed=1;" edge="1" parent="1" source="transform" target="analytics">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=1.000;exitY=0.500;entryX=0.000;entryY=0.500;dashed=1;" edge="1" parent="1" source="analytics" target="dash">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="csv" value="&lt;b&gt;CSV de encuestas&lt;/b&gt;&lt;br&gt;respuesta_encuesta.csv" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F9;strokeColor=#88ACCC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="47" y="68" width="149" height="47" />
+        </mxCell>
+        <mxCell id="db" value="&lt;b&gt;Base relacional&lt;/b&gt;&lt;br&gt;Reseñas y opiniones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F9;strokeColor=#88ACCC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="217" y="68" width="149" height="47" />
+        </mxCell>
+        <mxCell id="api" value="&lt;b&gt;API REST&lt;/b&gt;&lt;br&gt;Comentarios JSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F9;strokeColor=#88ACCC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="387" y="68" width="149" height="47" />
+        </mxCell>
+        <mxCell id="worker" value="&lt;b&gt;Worker Service · .NET 8&lt;/b&gt;&lt;br&gt;CsvExtractor · DatabaseExtractor · ApiExtractor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCEFFA;strokeColor=#3D85BC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="160" y="156" width="258" height="63" />
+        </mxCell>
+        <mxCell id="log" value="&lt;b&gt;ILogger&lt;/b&gt;&lt;br&gt;Eventos y errores" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#A2ACB7;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="431" y="160" width="106" height="55" />
+        </mxCell>
+        <mxCell id="stage" value="&lt;b&gt;Staging por lote&lt;/b&gt;&lt;br&gt;Archivos NDJSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DFF4EC;strokeColor=#58A695;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="192" y="251" width="194" height="48" />
+        </mxCell>
+        <mxCell id="transform" value="&lt;b&gt;Transformación y carga&lt;/b&gt;&lt;br&gt;Limpieza y sentimiento" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#A2ACB7;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="47" y="343" width="148" height="54" />
+        </mxCell>
+        <mxCell id="analytics" value="&lt;b&gt;SQL Server analítico&lt;/b&gt;&lt;br&gt;analisis_opiniones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#A2ACB7;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="217" y="343" width="149" height="54" />
+        </mxCell>
+        <mxCell id="dash" value="&lt;b&gt;Dashboard&lt;/b&gt;&lt;br&gt;Satisfacción y tendencias" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#A2ACB7;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="387" y="343" width="149" height="54" />
+        </mxCell>
+        <mxCell id="title" value="Arquitectura · Sistema de Análisis de Opiniones de Clientes" style="text;html=1;align=left;fontSize=17;fontStyle=1;fontColor=#14273D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="44" y="16" width="505" height="30" />
+        </mxCell>
+        <mxCell id="legend" value="Línea discontinua: etapas posteriores al alcance de esta práctica." style="text;html=1;align=left;fontSize=11;fontColor=#4C6074;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="44" y="403" width="505" height="25" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="etl-2" name="Flujo ETL">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageWidth="600" pageHeight="440">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e1" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.500;entryY=0.000;" edge="1" parent="1" source="start" target="read">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.500;entryY=0.000;" edge="1" parent="1" source="read" target="write">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.500;entryY=0.000;" edge="1" parent="1" source="write" target="result">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e4" value="No" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.000;exitY=0.500;entryX=0.500;entryY=0.000;" edge="1" parent="1" source="result" target="fail">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="114" y="278" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="Sí" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=0.500;exitY=1.000;entryX=0.500;entryY=0.000;" edge="1" parent="1" source="result" target="commit">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=segmentEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#55728E;exitX=1.000;exitY=0.500;entryX=0.000;entryY=0.500;dashed=1;" edge="1" parent="1" source="commit" target="next">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="start" value="&lt;b&gt;Iniciar ejecución&lt;/b&gt;&lt;br&gt;Cargar configuración y generar runId" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCEFFA;strokeColor=#3D85BC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="185" y="64" width="228" height="41" />
+        </mxCell>
+        <mxCell id="read" value="&lt;b&gt;Extraer fuentes habilitadas&lt;/b&gt;&lt;br&gt;CSV, base relacional y API en paralelo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F9;strokeColor=#88ACCC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="185" y="124" width="228" height="48" />
+        </mxCell>
+        <mxCell id="write" value="&lt;b&gt;Escribir archivos temporales&lt;/b&gt;&lt;br&gt;Validar el formato básico y contar filas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCEFFA;strokeColor=#3D85BC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="185" y="192" width="228" height="48" />
+        </mxCell>
+        <mxCell id="result" value="&lt;b&gt;¿Finalizan todas las fuentes?&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F9;strokeColor=#88ACCC;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="201" y="255" width="196" height="46" />
+        </mxCell>
+        <mxCell id="fail" value="&lt;b&gt;Registrar fallo&lt;/b&gt;&lt;br&gt;Descartar temporales" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF0EC;strokeColor=#CC8C7E;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="44" y="320" width="140" height="54" />
+        </mxCell>
+        <mxCell id="commit" value="&lt;b&gt;Confirmar lote&lt;/b&gt;&lt;br&gt;Renombrar la carpeta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DFF4EC;strokeColor=#58A695;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="222" y="320" width="154" height="54" />
+        </mxCell>
+        <mxCell id="next" value="&lt;b&gt;Consumir lote&lt;/b&gt;&lt;br&gt;Transformar y cargar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#A2ACB7;fontColor=#14273D;fontFamily=Arial;fontSize=12;arcSize=16;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="402" y="320" width="140" height="54" />
+        </mxCell>
+        <mxCell id="title" value="Flujo ETL · Sistema de Análisis de Opiniones de Clientes" style="text;html=1;align=left;fontSize=17;fontStyle=1;fontColor=#14273D;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="44" y="16" width="505" height="30" />
+        </mxCell>
+        <mxCell id="legend" value="Línea discontinua: etapas posteriores al alcance de esta práctica." style="text;html=1;align=left;fontSize=11;fontColor=#4C6074;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="44" y="383" width="505" height="25" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
